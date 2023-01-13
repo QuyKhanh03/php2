@@ -90,5 +90,6 @@ class Teachers {
         ." - Time: ".$this->time . " - Rank: ".$this->ranks($this->total_salary())."<br>";
     }
 }
+//create object of class Teachers
 $teacher1 = new Teachers("gv001","Nguyễn Văn A",2014,1000,12);
 $teacher1->showInfo();
