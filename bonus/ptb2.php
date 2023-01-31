@@ -37,3 +37,4 @@ class PTB2 {
 $ptb2 = new PTB2();
 echo "Delta : " .$ptb2->delta(2,9,3) ."<br>";
 echo $ptb2->nghiemPT(2,9,3);
+
