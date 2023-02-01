@@ -4,6 +4,13 @@
 //     public $tay;
 //     public $mat;
 //     public $mui;
+//     //constructor
+//     public function __construct($chan, $tay, $mat, $mui) {
+//         $this->chan = $chan;
+//         $this->tay = $tay;
+//         $this->mat = $mat;
+//         $this-> mui = $mui;
+//     }
 //     public function an() {
 //         echo "ăn bằng mồm";
 //     }
@@ -17,9 +24,16 @@
 // class NguoiLon extends ConNguoi {
 
 //     public $longnach;
-
+//     //constructor
+//     public function __construct($chan,$tay,$mat,$mui,$longnach) {
+//         $this->longnach = $longnach;
+//         // parent constructor
+//         //gọi hàm khởi tạo từ class cha
+//         parent::__construct($chan,$tay,$mat,$mui);
+//     }
 //     public function di() {
 //         echo "đi bằng".$this->chan."Chân";
+        
 //     }
     
 //     public function noi() {
@@ -27,18 +41,17 @@
 //     }
     
 // }
-// //class con 
+//class con 
 // class TreCon extends ConNguoi{
 //     public function bo()
 //     {
 //         echo "trẻ con bò bằng ".$this->tay. " tay và " .$this->chan. " chân" ;
 //     }
 // }
-// $nguoiLon = new NguoiLon();
-// $nguoiLon->an();
+// $nguoiLon = new NguoiLon(2,2,2,1,"lông nách" );
+// // $nguoiLon->an();
 // $nguoiLon->di();
-// $nguoiLon->setTay(2);
-// $nguoiLon->setChan(2);
+
 // $treCon = new TreCon();
 // $treCon->setTay(2);
 // $treCon->setChan(2);
@@ -67,6 +80,14 @@ class ConNguoi {
     public $diaChi;
     public $email;
     public $sdt;
+    //constructor
+    public function __construct($hoTen, $namSinh, $diaChi, $email,$sdt) {
+        $this-> hoTen = $hoTen;
+        $this-> namSinh = $namSinh;
+        $this-> diaChi = $diaChi;
+        $this-> email = $email;
+        $this-> sdt = $sdt;
+    }
     public function tinhTuoi($namSinh) {
         return date("Y") - $namSinh;
     }
@@ -93,10 +114,11 @@ class SinhVien extends ConNguoi {
     public $Ly;
     public $Hoa;
     //constructor function
-    public function __construct ($Toan, $Ly, $Hoa) {
+    public function __construct ($Toan, $Ly, $Hoa,$hoTen,$namSinh,$diaChi,$email,$sdt) {
         $this->Toan = $Toan;
         $this->Ly = $Ly;
         $this->Hoa = $Hoa;
+        parent::__construct($hoTen,$namSinh,$diaChi,$email,$sdt);
     }
     public function tinhDiemTB() {
         return ($this->Toan + $this->Ly + $this->Hoa )/3;
@@ -121,9 +143,11 @@ class GiangVien extends ConNguoi {
     public $luongcb;
     public $soGioDay;
     //constructor 
-    public function __construct($luongcb,$soGioDay) {
+    public function __construct($luongcb,$soGioDay,$hoTen,$namSinh,$diaChi,$email,$sdt) {
         $this->luongcb = $luongcb;
         $this->soGioDay = $soGioDay;
+        //parent::__construct
+        parent::__construct($hoTen,$namSinh,$diaChi,$email,$sdt);
     }
     public function TongLuong(){
         return $this->luongcb * $this->soGioDay;
@@ -134,19 +158,11 @@ class GiangVien extends ConNguoi {
          ." địa chỉ : " .$this->diaChi." email : ".$this->email ." SĐT : " .$this->sdt ." tổng lương : ".$this->TongLuong();
     }
 }
-$sinhVien = new SinhVien(7,8,9);
-$sinhVien->setHoTen("Phạm Ngọc Khánh");
-$sinhVien->setNamSinh(2003);
-$sinhVien->setDiaChi("Thái Bình");
-$sinhVien->setEmail("hello@gmail.com");
-$sinhVien->setSdt("190289373817387");
+$sinhVien = new SinhVien(7,8,9,"Phạm Ngọc Khánh",2003,"Thái Bình","acb@gmail.com","828129198891");
+
 $sinhVien->HienThiTTSV(); 
 echo "<br>";
-$giangVien = new GiangVien(10000,12);
-$giangVien->setHoTen("Nguyễn Văn A");
-$giangVien->setNamSinh(1990);
-$giangVien->setDiaChi("Hà Nội");
-$giangVien->setEmail("gv@gmail.com");
-$giangVien->setSdt("8382y98282888");
+$giangVien = new GiangVien(10000,12,"Nguyễn Văn A",1990,"hà Nội","acb@gmail.com","8828318");
+
 $giangVien->HienThiTTGV();
 

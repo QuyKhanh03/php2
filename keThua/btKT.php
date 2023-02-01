@@ -19,12 +19,16 @@ class Student extends Person {
         $this->dtb = $dtb;
         $this->email = $email;
     }
+    
     public function hienThiTT() {
         echo "Tên : " .$this->name . ", giới tính : " .$this->gender .", quê quán : " .$this->address 
-        . ", ngày sinh : " .$this->birthday .", điểm trung bình : " .$this->dtb .", email : " .$this->email ;
-
-        
+        . ", ngày sinh : " .$this->birthday .", điểm trung bình : " .$this->dtb .", email : " .$this->email .$this->xemXet()
+        ;
     }
+    public function xemXet() {
+        return ($this->dtb >=8) ? " => được học bổng " : " ";
+    }
+
 
 }
 $student = new Student();
