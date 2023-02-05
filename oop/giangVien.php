@@ -48,7 +48,7 @@ class giangVien {
     }
 }
 //khởi tạo gv1;
-$gv1 = new giangVien();
+// $gv1 = new giangVien();
 $gv1->setId("gv001");
 $gv1->setTen(" Nguyễn Văn A ");
 $gv1->setNamSinh(1996);
@@ -58,7 +58,7 @@ $gv1->thongTinGV();
 
 //khởi tạo gv2;
 
-$gv2 = new giangVien();
+// $gv2 = new giangVien();
 echo "<br/>";
 $gv2->setId("gv002");
 $gv2->setTen(" Phạm Thị C ");
