@@ -1,5 +1,5 @@
 <?php 
-namespace CategoriesModels;
+namespace ModelsCategories;
 
 use database;
 
@@ -25,6 +25,12 @@ class CategoriesModels extends database {
         $id = $_GET['cate_id'];
         $sql = "UPDATE categories SET name = '$name' WHERE cate_id = $id";
         return $this->getData($sql,false);
+    }
+    //get_one category
+    public function get_one_category() {
+        $id = $_GET['cate_id'];
+        $sql = "SELECT * FROM categories WHERE cate_id = $id";
+        return $this->getData($sql);
     }
 
 }

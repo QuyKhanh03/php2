@@ -9,6 +9,11 @@ class DiscountsModel extends database {
         $sql = "SELECT * FROM code_discounts join products on products.id = code_discounts.product_id";
         return $this->getData($sql);
     }
+    //get name product
+    public function get_products() {
+        $sql = "SELECT id,name_product FROM products order by products.id desc";
+        return $this->getData($sql);
+    }
     public function delete_discount() {
         $id = $_GET['discount_id'];
         $sql = "DELETE FROM code_discounts WHERE discount_id = $id";

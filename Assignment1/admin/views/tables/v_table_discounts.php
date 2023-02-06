@@ -39,8 +39,8 @@
                                             <td><?php echo date_format(date_create($value["end_date"]),"H:i || d/m/Y") ?></td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a href="?url=delete-discount&discount_id=<?php echo $value["id"] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="?url=edit-discount&discount_id=<?php echo $value["discount_id"] ?>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="?url=delete-discount&discount_id=<?php echo $value["discount_id"] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

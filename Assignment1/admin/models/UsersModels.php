@@ -17,12 +17,17 @@ class UsersModel extends database {
     }
     //update a user with id_user
 
-    public function update_user($username, $password, $email,$address,$phone,$id_role,$id_user) {
+    public function update_user($username, $password, $email,$address,$phone,$id_role) {
         $id_user = $_GET["id_user"];
         $sql = "UPDATE users 
         SET username = '$username', password = '$password',
         email = '$email',address = '$address',phone = '$phone',id_role = '$id_role' WHERE id_user = '$id_user'";
         return $this->getData($sql,false);
+    }
+    //get_all_roles()
+    public function get_all_roles() {
+        $sql = "SELECT * FROM roles";
+        return $this->getData($sql);
     }
     //delete a user with id_user
 

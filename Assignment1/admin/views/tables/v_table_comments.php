@@ -19,27 +19,25 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Name</th>
-                                        <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Action</th>
+                                        <th>Description</th>
+                                        <th>User</th>
+                                        <th>Product</th>
+                                        <th>Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($listUsers as $key => $value) { ?>
+                                    foreach ($listComments as $key => $value) { ?>
                                         <tr>
-                                            <td><i class="fa fa-user"></i></td>
+                                            <td></td>
+                                            <td><?php echo $value["description"] ?></td>
                                             <td><?php echo $value["username"] ?></td>
-                                            <!-- <td>M.COM., P.H.D.</td> -->
-                                            <td><a href="javascript:void(0);"><strong><?php echo $value["phone"] ?></strong></a></td>
-                                            <td><a href="javascript:void(0);"><strong><?php echo $value["email"] ?></strong></a></td>
-                                            <td><?php echo $value["address"] ?></td>
+                                            <td><?php echo $value["name_product"] ?></td>
+                                            <td><?php echo date_format($value["time"],"Y-m-d H:i:s") ?></td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a href="?url=delete-user&id_user=<?php echo $value["id_user"] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="?url=edit-category&cate_id=<?php echo $value["cate_id"] ?>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="?url=delete-category&cate_id=<?php echo $value["cate_id"] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

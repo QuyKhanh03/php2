@@ -16,11 +16,22 @@
                     <div class="card-body">
                         <div class="basic-form">
                             <form method="POST" action="">
-                                <?php foreach($rows as $key=> $value): ?>
                                 <div class="form-group">
-                                    <input value="<?= $value["name"] ?>" name="name_category" type="text" class="form-control input-default " placeholder="input-name">
+                                    <input name="name_product" type="text" class="form-control input-default " placeholder="Product Name">
                                 </div>
-                                <?php endforeach; ?>
+                                <div class="form-group">
+                                    <input name="price" type="text" class="form-control input-default " placeholder="Price">
+                                </div>
+                                <div class="form-group">
+                                    <input name="description" type="text" class="form-control input-default " placeholder="Description">
+                                </div>
+                                <div class="form-group">
+                                    <select name="cate_id" class="form-control default-select" id="sel1">
+                                        <?php foreach($categories as $key=> $value): ?>
+                                        <option value="<?php echo $value["cate_id"] ?>" ><?php echo $value["name"] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                                 <button type="submit" name="submit" class="btn btn-primary">Create</button>
                             </form>
 
