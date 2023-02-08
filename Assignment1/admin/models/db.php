@@ -11,7 +11,7 @@ class database
                 . ";charset=" . DBCHARSET,
             DBUSER,
             DBPASS
-        );
+        ); 
         return $connect;
     }
     public function __construct()
