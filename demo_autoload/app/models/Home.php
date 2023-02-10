@@ -6,3 +6,5 @@ class Home {
         echo "home constructor\n";
     }
 }
+
+//create a new class Product
