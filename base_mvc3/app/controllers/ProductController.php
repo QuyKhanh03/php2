@@ -11,4 +11,9 @@ class ProductController extends BaseController {
         $products = $this->product->getProduct();
         $this->render("product.index",compact("products","title"));
     }
+    public function add() {
+        $title = "Add Product";
+        $this->render("product.add",compact("title"));
+
+    }
 }

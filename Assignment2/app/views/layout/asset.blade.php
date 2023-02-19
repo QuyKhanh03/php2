@@ -1,0 +1,12 @@
+    {{-- src js --}}
+	<script src="{{ BASE_URL.'public/vendor/global/global.min.js' }}"></script>
+	<script src="{{ BASE_URL.'public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js' }}"></script>
+	<script src="{{ BASE_URL.'public/vendor/chart.js/Chart.bundle.min.js' }}"></script>
+    <script src="{{ BASE_URL.'public/js/custom.min.js' }}"></script>
+	<script src="{{ BASE_URL.'public/js/deznav-init.js' }}"></script>
+	<script src="{{ BASE_URL.'public/vendor/owl-carousel/owl.carousel.js' }}"></script>
+    <script src="{{ BASE_URL.'public/vendor/peity/jquery.peity.min.js' }}"></script>
+	<script src="{{ BASE_URL.'public/vendor/apexchart/apexchart.js' }}"></script>
+	<script src="{{ BASE_URL.'public/js/dashboard/dashboard-1.js' }}"></script>
+	<script src="{{ BASE_URL.'public/vendor/datatables/js/jquery.dataTables.min.js' }}"></script>
+    <script src="{{ BASE_URL.'public/js/plugins-init/datatables.init.js' }}"></script>

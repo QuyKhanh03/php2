@@ -19,6 +19,7 @@ $router->get('/', function(){
     return "trang chủ";
 });
 $router->get("product",[App\Controllers\ProductController::class , "index"]);
+$router->get("add-product",[App\Controllers\ProductController::class, "add"]);
 // $router->get('test', [App\Controllers\ProductController::class, 'index']);
 // $router->get('product', [App\Controllers\ProductController::class,"index"]);
 
